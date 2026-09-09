@@ -1,42 +1,79 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css"> <title>Luwigin</title>
-</head>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Luwigin</title>
+  </head>
 
-<body>
+  <body>
     <main class="container">
-        <form>
-            <h1>Login Luwi</h1>
-            <div class="input-box">
-                <input placeholder="Usuário" type="email" />
-                <i class="bx bxs-user"> </i>
-            </div>
-            <div class="input-box">
-                <input placeholder="Senha" type="password" />
-                <i class="bx bxs-lock-alt"> </i>
-            </div>
+      <!-- TELA DE LOGIN -->
+      <form id="login-form" class="screen active-screen">
+        <h1>Luwi_Login</h1>
+        <div class="input-box">
+          <input placeholder="Usuário" type="email" required />
+          <i class="bx bxs-user"> </i>
+        </div>
+        <div class="input-box">
+          <input placeholder="Senha" type="password" required />
+          <i class="bx bxs-lock-alt"> </i>
+        </div>
 
-            <div class="remember-forgot">
-                <label>
-                    <input type="checkbox" />
-                    Lembrar senha no proximo acesso
-                </label>
-                <a href="#">Esqueci a senha</a>
-            </div>
+        <div class="remember-forgot">
+          <label>
+            <input type="checkbox" />
+            Lembrar senha
+          </label>
+          <a href="#" id="forgot-link">Esqueci a senha</a>
+        </div>
 
-            <button type="submit" class="loginbt">Login</button>
+        <button type="submit" class="loginbt">Login</button>
 
-            <div class="register-link">
-                <p>Não tem uma conta <a href="#">Cadastre-se</a></p>
-            </div>
-            </button>
-        </form>
+        <div class="register-link">
+          <p>
+            Não tem uma conta <a href="#" id="go-to-register">Cadastre-se</a>
+          </p>
+        </div>
+      </form>
+
+      <!-- TELA DE CADASTRO -->
+      <form id="register-form" class="screen">
+        <h1>Cadastro</h1>
+        <div class="input-box">
+          <input placeholder="Email" type="email" required />
+          <i class="bx bxs-envelope"> </i>
+        </div>
+        <div class="input-box">
+          <input placeholder="Senha" type="password" required />
+          <i class="bx bxs-lock-alt"> </i>
+        </div>
+        <div class="input-box">
+          <input placeholder="Confirmar senha" type="password" required />
+          <i class="bx bxs-lock-alt"> </i>
+        </div>
+
+        <button type="submit" class="loginbt">Cadastrar</button>
+
+        <div class="register-link">
+          <p>Já tem uma conta <a href="#" id="go-to-login">Fazer login</a></p>
+        </div>
+      </form>
     </main>
-</body>
 
+    <!-- POPUP -->
+    <div id="popup-overlay" class="popup-overlay">
+      <div class="popup-box">
+        <p id="popup-message"></p>
+        <button id="popup-close" class="loginbt">OK</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
 </html>
